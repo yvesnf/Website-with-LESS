@@ -1,0 +1,132 @@
+//VARS
+@bgcolor: #03A9F4;
+@n: nav;
+@u: ul;
+@l: li;
+@s: section;
+@a: article;
+
+//FONTS
+.font-face(@Montserrat-Light) 
+{
+  //Indicates that the "font-family" to be used is "@fontfamily"
+  font-family:@Montserrat-Light, verdana, arial, sans-serif;
+
+    @font-face 
+    {
+      //Create a new "font-family" with name "@fontfamily", using "src:" as source files
+      font-family: @Montserrat-Light; 
+
+      src: url("/assets/fonts/@{Montserrat-Light}.ttf") format('truetype');
+      font-weight: lighter;
+      font-style: normal;
+    }
+}
+
+.font-face(@Montserrat-Regular) 
+{
+  //Indicates that the "font-family" to be used is "@fontfamily"
+  font-family:@Montserrat-Regular, verdana, arial, sans-serif;
+
+    @font-face 
+    {
+      //Create a new "font-family" with name "@fontfamily", using "src:" as source files
+      font-family: @Montserrat-Regular; 
+
+      src: url("/assets/fonts/@{Montserrat-Regular}.ttf") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+}
+
+.font-face(@Montserrat-ExtraBold) 
+{
+  //Indicates that the "font-family" to be used is "@fontfamily"
+  font-family:@Montserrat-ExtraBold, verdana, arial, sans-serif;
+
+    @font-face 
+    {
+      //Create a new "font-family" with name "@fontfamily", using "src:" as source files
+      font-family: @Montserrat-ExtraBold; 
+
+      src: url("/assets/fonts/@{Montserrat-ExtraBold}.ttf") format('truetype');
+      font-weight: bolder;
+      font-style: normal;
+    }
+}
+
+//APPLYING STYLES
+@{n}{
+    width: 100%;
+    height: 100px;
+    background-color: @bgcolor;
+}
+
+@{n}{
+    display: flex;  
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    @{u}{
+        .font-face(Montserrat-ExtraBold);
+        list-style-type: none;
+        font-size: xx-large;
+        margin-right: 40px;
+        @{l}{
+            margin-left: 20px;
+            float: left;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+}
+
+@{n}{
+    @{u}{   
+        @{l}:hover{   
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+        }
+    }
+}
+
+@{s}{
+    @{a}{
+        padding-right: 20px;
+        p{
+            .font-face(Montserrat-Light);
+        }
+    }
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    float: left;
+}
+
+.clearfix{
+    float:none;
+    clear: both;
+}
+
+aside{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    background-color: beige;
+    p{
+        text-align: justify;
+        .font-face(Montserrat-Light);
+    }
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    background-color: @bgcolor;
+    .font-face(Montserrat-Regular);
+    
+}
+
+h2{
+    .font-face(Montserrat-Regular);
+}
